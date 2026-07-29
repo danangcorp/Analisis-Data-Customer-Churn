@@ -1,67 +1,40 @@
-# Analisis-Data-Customer-Churn
-Tujuan utama dari proyek analisis ini adalah mengidentifikasi faktor-faktor pemicu churn pelanggan dan menghasilkan rekomendasi aksi nyata (actionable insights) untuk meningkatkan kesetiaan pelanggan (customer retention).
+Dashboard Analisis Penjualan & Retensi Pelanggan
+📌 Ringkasan Proyek
 
-# Tahapan Analisis Data E-Commerce
-Berikut adalah bagian awal dari tahapan analisis data pelanggan e-commerce:
+Proyek ini menganalisis 1.586 transaksi penjualan pelanggan menggunakan Python (Google Colab) untuk proses pembersihan dan analisis data, serta Power BI untuk membangun dashboard interaktif satu halaman. Proyek ini mengungkap tren penjualan, performa kategori produk, demografi pelanggan, perilaku subscription, serta distribusi revenue antar negara — mengikuti alur kerja data analytics end-to-end untuk mendukung pengambilan keputusan bisnis berbasis data.
 
-## 1. Pendahuluan
-Industri e-commerce tumbuh sangat pesat, memicu persaingan yang ketat dalam mempertahankan pelanggan. Mengakuisisi pelanggan baru membutuhkan biaya yang jauh lebih besar daripada mempertahankan pelanggan yang sudah ada. Oleh karena itu, kemampuan untuk memprediksi dan mencegah pelanggan melakukan churn (pindah ke kompetitor) menjadi kunci keberlanjutan bisnis.
+🛠️ Tools & Teknologi
+Python (Pandas) — pembersihan data & exploratory data analysis (EDA)
+Google Colab — lingkungan analisis
+Power BI — perancangan dashboard & DAX measure
+DAX — custom measure dan calculated column
+📊 Preview Dashboard
+<!-- Tambahkan screenshot dashboard Anda di sini -->
 
-Perusahaan e-commerce ini merekam data profil, transaksi, dan status keaktifan pelanggan. Namun, data mentah tersebut belum diolah secara optimal untuk memberikan wawasan strategis. Melalui proyek ini, data akan dibersihkan, dieksplorasi, dan dianalisis untuk menemukan pola tersembunyi di balik keputusan pelanggan untuk bertahan atau pergi.
+Show Image
 
-## 2. Tujuan Proyek
-Tujuan utama dari proyek analisis ini adalah mengidentifikasi faktor-faktor pemicu churn pelanggan dan menghasilkan rekomendasi aksi nyata (actionable insights) untuk meningkatkan kesetiaan pelanggan (customer retention).
-
-## 3. Rumusan Masalah / Pertanyaan Bisnis Utama (Menggunakan Metode SMART)
-Untuk mencapai tujuan tersebut, analisis ini difokuskan untuk menjawab 4 pertanyaan bisnis utama yang dirumuskan secara SMART (Specific, Measurable, Actionable, Relevant, Time-bound):
-
-## BQ-1: Tren Finansial & Churn
-
-Pertanyaan: Apakah pelanggan yang berhenti berlangganan (churn) adalah mereka yang pengeluarannya sedikit?
-
-Jawaban & Penjelasan: Tidak. Justru sebaliknya, pelanggan yang pergi rata-rata memiliki pengeluaran yang sedikit lebih tinggi daripada pelanggan yang bertahan. Artinya, kita tidak sedang kehilangan pelanggan berbudget rendah, melainkan kehilangan pelanggan bernilai tinggi (VIP).
-
-## BQ-2: Karakteristik Demografi
-
-Pertanyaan: Kelompok usia dan jenis kelamin mana yang paling banyak meninggalkan aplikasi?
-
-Jawaban & Penjelasan: Pelanggan Wanita dan kelompok usia Senior (55 tahun ke atas) adalah yang paling banyak berhenti berlangganan. Selain itu, perlu diwaspadai kelompok anak muda (di bawah 25 tahun) karena mereka mencatat rekor tertinggi untuk status "menjeda/menonaktifkan sementara" (paused) langganan mereka.
-
-## BQ-3: Loyalitas & Perilaku
-
-Pertanyaan: Apakah pelanggan yang sudah lama bergabung dan sering belanja dijamin lebih setia?
-
-Jawaban & Penjelasan: Sangat tidak. Ini adalah temuan paling mengejutkan. Sekitar 94% pelanggan yang pergi justru adalah "veteran" yang sudah berlangganan lebih dari 3 tahun dan masuk dalam kategori sangat sering belanja. Kesetiaan di masa lalu tidak mencegah mereka untuk pergi, kemungkinan besar karena mereka sudah merasa jenuh atau bosan.
-
-## BQ-4: Pembatalan & Churn
-
-Pertanyaan: Apakah riwayat membatalkan pesanan memengaruhi keputusan pelanggan untuk berhenti langganan?
-
-Jawaban & Penjelasan: Ya, sangat berpengaruh. Begitu seorang pelanggan mengalami kendala hingga harus membatalkan pesanannya (walaupun cuma 1 kali), risiko mereka untuk kecewa dan akhirnya pergi (churn) langsung melonjak drastis dibandingkan pelanggan yang belanjaannya selalu mulus tanpa pembatalan.
-
-# 💡 Rekomendasi Strategi Bisnis
-## 1. Strategi Berdasarkan BQ-1 (Fokus Layanan, Bukan Perang Harga)
-
-Masalah: Kita kehilangan pelanggan yang punya daya beli tinggi.
-
-Rekomendasi: Karena mereka bukan pelanggan yang sensitif terhadap harga, jangan buang budget untuk memberi mereka diskon murah. Fokuskan perbaikan pada kualitas pelayanan (Customer Experience), seperti mempercepat waktu pengiriman, meningkatkan kualitas packaging, dan memastikan Customer Service merespon keluhan dengan cepat.
-
-## 2. Strategi Berdasarkan BQ-2 (Pendekatan Khusus Usia)
-
-Masalah: Banyak pelanggan lansia (55+) yang pergi, dan anak muda (<25) yang menjeda langganan.
-
-Rekomendasi: * Untuk usia 55+: Buat tampilan aplikasi (UI/UX) lebih ramah lansia. Misalnya: tombol yang lebih besar, tulisan yang lebih jelas, dan proses pembayaran yang tidak rumit.
-
-Untuk usia <25: Tawarkan "Paket Langganan Pelajar" yang lebih murah atau opsi berlangganan yang bisa di-jeda (pause) dan diaktifkan lagi kapan saja tanpa penalti, agar mereka tidak benar-benar pergi.
-
-## 3. Strategi Berdasarkan BQ-3 (Apresiasi Pelanggan Lama / VIP)
-
-Masalah: Pelanggan yang sudah setia lebih dari 3 tahun dan sering belanja malah pergi karena jenuh.
-
-Rekomendasi: Buat Program Loyalitas VIP Khusus Veteran. Jangan hanya mengejar pelanggan baru. Berikan pelanggan lama ini reward eksklusif, seperti: akses membeli produk baru lebih awal, layanan komplain prioritas, atau hadiah kejutan (surprise gift) di ulang tahun langganan mereka. Tujuannya mengembalikan rasa "spesial" mereka.
-
-## 4. Strategi Berdasarkan BQ-4 (Penyelamatan Pesanan Batal)
-
-Masalah: Pelanggan yang pernah membatalkan pesanan sangat rentan untuk pergi.
-
-Rekomendasi: Buat sistem "Penyelamatan Otomatis" (Recovery System). Ketika pelanggan mengklik tombol "Batal Transaksi", sistem harus langsung memunculkan pesan otomatis. Tanyakan apa masalahnya, dan tawarkan bantuan langsung (misal: "Ongkir kemahalan ya? Ini ada voucher gratis ongkir khusus untukmu hari ini!"). Jangan biarkan mereka membatalkan pesanan dengan perasaan kecewa.
+❓ Pertanyaan Bisnis (5W + 1H)
+What — Berapa total order, revenue, dan pelanggan aktif?
+What — Kategori produk apa yang paling laris?
+Where — Negara mana penyumbang revenue terbesar?
+When — Bagaimana tren revenue dari waktu ke waktu?
+Why — Bagaimana distribusi status subscription, dan apa penyebab cancellation?
+Who — Bagaimana profil pelanggan (usia & gender) yang paling banyak berkontribusi ke revenue?
+💡 Insight Utama
+Menghasilkan total revenue sebesar $142M dari 1.586 order, dengan 931 pelanggan (58,7%) berstatus subscription aktif.
+Clothing menjadi kategori dengan performa terbaik ($30,8M), diikuti Sports, Electronics, Beauty, dan Home — kontribusinya relatif merata antar kategori.
+Revenue tersebar cukup merata antar negara, dipimpin oleh UK dan Pakistan ($24M masing-masing), diikuti Germany, India, dan USA ($23M masing-masing).
+Pelanggan usia 55+ menyumbang revenue tertinggi ($45M), sementara distribusi gender cukup seimbang antara Female (52,27%) dan Male (44,39%).
+Mengidentifikasi tingkat pembatalan subscription sebesar 23,96%, menyoroti peluang penting untuk strategi retensi pelanggan.
+✅ Hasil (Outcomes)
+Membersihkan dan menganalisis 1.586 data transaksi pelanggan menggunakan Python (Pandas) di Google Colab.
+Membangun dashboard Power BI interaktif satu halaman dengan custom DAX measure untuk memantau performa penjualan, status subscription, dan demografi pelanggan.
+Mengidentifikasi tren revenue, kategori produk unggulan, serta segmentasi pelanggan berdasarkan usia dan gender.
+Menghasilkan rekomendasi bisnis yang actionable untuk meningkatkan retensi pelanggan dan menurunkan tingkat pembatalan subscription.
+Menyampaikan solusi business intelligence end-to-end yang menggabungkan data cleaning, visualisasi, dan profiling pelanggan.
+📈 Rekomendasi Bisnis
+Investigasi data yang hilang — sekitar 15-20% data memiliki nilai "UNKNOWN" di kolom country/subscription; perbaikan proses pencatatan data akan meningkatkan akurasi laporan.
+Turunkan tingkat cancellation — jalankan survei exit dan program win-back untuk pelanggan berstatus "paused" sebelum mereka benar-benar churn.
+Investigasi tren revenue yang melandai sejak 2024 — bandingkan dengan aktivitas campaign marketing dan kompetitor untuk menemukan penyebabnya.
+Manfaatkan segmen usia 55+ — sesuaikan strategi marketing dan layanan pelanggan untuk segmen bernilai tinggi ini, sambil eksplorasi strategi pertumbuhan untuk segmen 18-24.
+Pertahankan strategi produk/negara yang seimbang — tidak ada kategori atau negara yang mendominasi ekstrem, sehingga investasi sebaiknya tetap terdiversifikasi.
